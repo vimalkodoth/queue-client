@@ -10,7 +10,7 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
-    "test": "jest --config jestconfig.json"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
