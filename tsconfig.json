@@ -2,10 +2,15 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "node16",
     "declaration": true,
     "outDir": "./lib",
+    "baseUrl": "src",
+    "paths": {
+      "queue-client": ["index.ts"],
+    },
     "strict": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "**/__tests__/*"]
+  "include": ["src","__tests__"],
+  "exclude": ["node_modules"]
 }
