@@ -1,6 +1,6 @@
-import { PriorityQueue } from './priorityQueue';
-import { QItem } from './priorityQueue';
-export class QueueClient {
+import { PriorityQueue, QItem } from './priorityQueue';
+
+export default class QueueClient {
   pQueue: PriorityQueue | null = null;
 
   constructor(pQueue: PriorityQueue) {
@@ -8,18 +8,16 @@ export class QueueClient {
   }
 
   public findTopN(inputNumbers: Array<any>, N: number): Array<number> {
-    const numbersList = this.getFilteredNumbers(inputNumbers);
+    const numbersList = QueueClient.getFilteredNumbers(inputNumbers);
     if (!numbersList.length) {
       throw new Error('input is empty!');
     }
-    if (numbersList.length < N) {
-      N = numbersList.length;
-    }
-    for (let i = 0; i < N; i++) {
+    const M = numbersList.length < N ? numbersList.length : N;
+    for (let i = 0; i < M; i += 1) {
       this.pQueue?.enqueue(numbersList[i]);
     }
-    for (let i = N; i < numbersList.length; i++) {
-      let smallest = this.pQueue?.peek() as QItem;
+    for (let i = M; i < numbersList.length; i += 1) {
+      const smallest = this.pQueue?.peek() as QItem;
       if (numbersList[i] > smallest) {
         this.pQueue?.dequeue();
         this.pQueue?.enqueue(numbersList[i]);
@@ -28,9 +26,7 @@ export class QueueClient {
     return this.pQueue?.printQueue() as Array<number>;
   }
 
-  private getFilteredNumbers(inputList: Array<any> = []): Array<number> {
-    return inputList.filter((nextInput) => {
-      return Number.isFinite(nextInput) ? true : false;
-    });
+  static getFilteredNumbers(inputList: Array<any> = []): Array<number> {
+    return inputList.filter((nextInput) => Number.isFinite(nextInput));
   }
 }

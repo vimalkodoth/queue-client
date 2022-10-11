@@ -1,2 +1,2 @@
 export * from './utils/priorityQueue';
-export * from './utils/queueClient';
+export { default as QueueClient } from './utils/queueClient';

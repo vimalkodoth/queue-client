@@ -12,8 +12,6 @@ interface IHeapify {
 export class PriorityQueue implements IHeapify {
   queue: Queue = [];
 
-  constructor() {}
-
   enqueue(node: number): void {
     if (this.isEmpty()) {
       this.queue.push(node);
@@ -37,7 +35,7 @@ export class PriorityQueue implements IHeapify {
   }
 
   printQueue(): Queue {
-    let stack = [];
+    const stack = [];
     while (!this.isEmpty()) {
       stack.push(this.dequeue());
     }
@@ -46,7 +44,7 @@ export class PriorityQueue implements IHeapify {
 
   peek(): number {
     if (!this.queue.length) {
-      new Error('queue is empty!');
+      throw new Error('queue is empty!');
     }
     return this.queue[0];
   }
@@ -55,10 +53,22 @@ export class PriorityQueue implements IHeapify {
     return !this.queue.length;
   }
 
+  static findLeftChild(index: number): number {
+    return 2 * index + 1;
+  }
+
+  static findRightChild(index: number): number {
+    return 2 * index + 2;
+  }
+
+  static findParent(index: number): number {
+    return Math.floor((index - 1) / 2);
+  }
+
   private shiftUp(queue: Queue) {
     let currentIndex = queue.length - 1;
     while (currentIndex > 0) {
-      let parentIndex = this.findParent(currentIndex);
+      const parentIndex = PriorityQueue.findParent(currentIndex);
       if (queue[parentIndex] > queue[currentIndex]) {
         this.swap(currentIndex, parentIndex);
       }
@@ -66,36 +76,24 @@ export class PriorityQueue implements IHeapify {
     }
   }
 
-  private swap(i: number, j: number, queue = this.queue) {
-    const temp = queue[i];
-    queue[i] = queue[j];
-    queue[j] = temp;
+  private swap(i: number, j: number) {
+    const temp = this.queue[i];
+    this.queue[i] = this.queue[j];
+    this.queue[j] = temp;
   }
 
   private shiftDown(queue: Queue) {
     let currentIndex = 0;
     let minIndexOfChild = 0;
     while (currentIndex >= 0) {
-      const leftChildIndex = this.findLeftChild(currentIndex);
-      const rightChildIndex = this.findRightChild(currentIndex);
+      const leftChildIndex = PriorityQueue.findLeftChild(currentIndex);
+      const rightChildIndex = PriorityQueue.findRightChild(currentIndex);
       minIndexOfChild = this.findMinIndexOfChildren(leftChildIndex, rightChildIndex);
       if (minIndexOfChild && queue[currentIndex] > queue[minIndexOfChild]) {
         this.swap(currentIndex, minIndexOfChild);
       }
       currentIndex = minIndexOfChild;
     }
-  }
-
-  private findLeftChild(index: number): number {
-    return 2 * index + 1;
-  }
-
-  private findRightChild(index: number): number {
-    return 2 * index + 2;
-  }
-
-  private findParent(index: number): number {
-    return Math.floor((index - 1) / 2);
   }
 
   private findMinIndexOfChildren(leftChild: number, rightChild: number): number {
