@@ -7,10 +7,10 @@
     "outDir": "./lib",
     "baseUrl": "src",
     "paths": {
-      "queue-client": ["index.ts"],
+      "queue-client": ["index.ts"]
     },
     "strict": true
   },
-  "include": ["src","__tests__"],
-  "exclude": ["node_modules"]
+  "include": ["src", "__tests__"],
+  "exclude": ["node_modules", "lib"]
 }
