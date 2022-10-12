@@ -1,6 +1,6 @@
 {
   "name": "@vimal_madhavan/queue-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An npm module for findTopN using priority queues",
   "main": "index.ts",
   "files": [
