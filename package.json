@@ -7,6 +7,9 @@
     "lib/**/*"
   ],
   "baseUrl": "./src",
+  "exports": {
+    "@vimal_madhavan/queue-client": "./lib/index.js"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
