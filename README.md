@@ -17,9 +17,9 @@ O(N) is required for stack.
 
 Run following commands in the root directory of the project:
 
-# npm ci
+#### npm ci
 
-# npm test
+#### npm test
 
 ## API usage example
 
@@ -41,7 +41,6 @@ Additionally, following commands are available:
 "lint:fix": fixes possible linting issues,
 "test": "jest" : run tests,
 "coverage": "jest --coverage" : generate code coverage
-
 ```
 
 ## License
