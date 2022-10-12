@@ -39,8 +39,9 @@ Additionally, following commands are available:
 "format": format using prettier,
 "lint": checks for linting errors/warnings. uses eslint - airbnb,
 "lint:fix": fixes possible linting issues,
-"test": "jest" : run tests,
-"coverage": "jest --coverage" : generate code coverage
+"test": run tests,
+"coverage": generate code coverage
+"prepare": setup husky for git pre-commit hooks
 ```
 
 ## License
