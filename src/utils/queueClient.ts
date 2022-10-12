@@ -1,4 +1,4 @@
-import { PriorityQueue, QItem } from './priorityQueue';
+import { PriorityQueue, QItem } from '@vimalkodoth/queue-client';
 
 export default class QueueClient {
   pQueue: PriorityQueue | null = null;

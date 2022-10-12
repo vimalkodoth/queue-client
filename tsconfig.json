@@ -7,10 +7,10 @@
     "outDir": "./lib",
     "baseUrl": "src",
     "paths": {
-      "queue-client": ["index.ts"]
+      "@vimalkodoth/queue-client": ["index.ts"]
     },
     "strict": true
   },
-  "include": ["src", "__tests__"],
-  "exclude": ["node_modules", "lib"]
+  "include": ["src", "__tests__", "lib"],
+  "exclude": ["node_modules"]
 }

@@ -1,4 +1,4 @@
-import { PriorityQueue } from './priorityQueue';
+import { PriorityQueue } from '@vimalkodoth/queue-client';
 export default class QueueClient {
     pQueue: PriorityQueue | null;
     constructor(pQueue: PriorityQueue);

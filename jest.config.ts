@@ -4,6 +4,6 @@ module.exports = {
   rootDir: '.',
   testEnvironment: 'node',
   moduleNameMapper: {
-    'queue-client': '<rootDir>/src/index.ts',
+    '@vimalkodoth/queue-client': '<rootDir>/src/index.ts',
   },
 };
