@@ -7,7 +7,7 @@
     "outDir": "./lib",
     "baseUrl": "src",
     "paths": {
-      "@vimalkodoth/queue-client": ["index.ts"]
+      "@vimal_madhavan/queue-client": ["index.ts"]
     },
     "strict": true
   },

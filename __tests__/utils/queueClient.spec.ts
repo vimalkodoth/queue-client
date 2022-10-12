@@ -1,4 +1,4 @@
-import { PriorityQueue, QueueClient } from '@vimalkodoth/queue-client';
+import { PriorityQueue, QueueClient } from '@vimal_madhavan/queue-client';
 
 describe('As a developer, I want to check findTopN ', () => {
   let priorityQueue: PriorityQueue | null;
