@@ -18,8 +18,8 @@
     "test": "jest",
     "coverage": "jest --coverage"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "vimal madhavan",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.1.2",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
