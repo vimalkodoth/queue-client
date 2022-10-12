@@ -21,6 +21,17 @@ Run following commands in the root directory of the project:
 
 # npm test
 
+## API usage example
+
+```
+
+import { PriorityQueue, QueueClient } from '@vimalkodoth/queue-client';
+const priorityQueue = new PriorityQueue();
+const queueClient = new QueueClient(priorityQueue);
+const topN = queueClient?.findTopN([1, 2, 5, 3, 4], 2);
+
+```
+
 Additionally, following commands are available:
 
 ```
