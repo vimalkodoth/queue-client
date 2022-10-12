@@ -32,10 +32,10 @@ const topN = queueClient?.findTopN([1, 2, 5, 3, 4], 2);
 
 ```
 
-Additionally, following commands are available:
+Additionally, following npm commands are available:
 
 ```
-"npm build" : generate node compatiable (commonjs) es5 output,
+"build" : generate node compatiable (commonjs) es5 output,
 "format": format using prettier,
 "lint": checks for linting errors/warnings. uses eslint - airbnb,
 "lint:fix": fixes possible linting issues,
