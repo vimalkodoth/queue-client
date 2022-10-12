@@ -44,6 +44,10 @@ Additionally, following npm commands are available:
 "prepare": setup husky for git pre-commit hooks
 ```
 
+## NPM package
+
+https://www.npmjs.com/package/@vimal_madhavan/queue-client
+
 ## License
 
 MIT
