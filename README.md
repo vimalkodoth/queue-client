@@ -43,3 +43,7 @@ Additionally, following commands are available:
 "coverage": "jest --coverage" : generate code coverage
 
 ```
+
+## License
+
+MIT
