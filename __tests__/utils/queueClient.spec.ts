@@ -1,6 +1,6 @@
 import { PriorityQueue, QueueClient } from '@vimal_madhavan/queue-client';
 
-describe('As a developer, I want to check findTopN ', () => {
+describe('As a developer, I want findTopN method ', () => {
   let priorityQueue: PriorityQueue | null;
   let queueClient: QueueClient | null;
 
