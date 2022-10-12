@@ -8,7 +8,7 @@
   ],
   "baseUrl": "./src",
   "exports": {
-    "queue-client": "./index.ts"
+    "@vimal_madhavan/queue-client": "./index.ts"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
