@@ -9,14 +9,15 @@ export default class QueueClient {
 
   public findTopN(inputNumbers: Array<any>, N: number): Array<number> {
     const numbersList = QueueClient.getFilteredNumbers(inputNumbers);
-    if (!numbersList.length) {
+    const numbersListLength = numbersList.length;
+    if (!numbersListLength) {
       throw new Error('input is empty!');
     }
-    const M = numbersList.length < N ? numbersList.length : N;
+    const M = numbersListLength < N ? numbersListLength : N;
     for (let i = 0; i < M; i += 1) {
       this.pQueue?.enqueue(numbersList[i]);
     }
-    for (let i = M; i < numbersList.length; i += 1) {
+    for (let i = M; i < numbersListLength; i += 1) {
       const smallest = this.pQueue?.peek() as QItem;
       if (numbersList[i] > smallest) {
         this.pQueue?.dequeue();
