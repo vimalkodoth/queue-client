@@ -28,6 +28,7 @@ export default class QueueClient {
   }
 
   static getFilteredNumbers(inputList: Array<any> = []): Array<number> {
-    return inputList.filter((nextInput) => Number.isFinite(nextInput));
+    const isFinite = (nextInput: any) => Number.isFinite(nextInput);
+    return inputList.filter(isFinite);
   }
 }
