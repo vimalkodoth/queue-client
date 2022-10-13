@@ -1,13 +1,17 @@
-import { PriorityQueue, QItem } from '@vimal_madhavan/queue-client';
+import { QItem, IHeapify } from '@vimal_madhavan/queue-client';
 
+const isFinite = (nextInput: any) => Number.isFinite(nextInput);
 export default class QueueClient {
-  pQueue: PriorityQueue | null = null;
+  pQueue: IHeapify | null = null;
 
-  constructor(pQueue: PriorityQueue) {
+  constructor(pQueue: IHeapify) {
     this.pQueue = pQueue;
   }
 
   public findTopN(inputNumbers: Array<any>, N: number): Array<number> {
+    if (!this.pQueue) {
+      throw new Error('client not initialized correctly!');
+    }
     const numbersList = QueueClient.getFilteredNumbers(inputNumbers);
     const numbersListLength = numbersList.length;
     if (!numbersListLength) {
@@ -28,7 +32,6 @@ export default class QueueClient {
   }
 
   static getFilteredNumbers(inputList: Array<any> = []): Array<number> {
-    const isFinite = (nextInput: any) => Number.isFinite(nextInput);
     return inputList.filter(isFinite);
   }
 }
