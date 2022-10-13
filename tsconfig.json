@@ -11,6 +11,6 @@
     },
     "strict": true
   },
-  "include": ["src", "__tests__", "lib"],
+  "include": ["src", "__tests__"],
   "exclude": ["node_modules"]
 }

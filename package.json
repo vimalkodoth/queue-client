@@ -2,13 +2,13 @@
   "name": "@vimal_madhavan/queue-client",
   "version": "1.1.0",
   "description": "An npm module for findTopN using priority queues",
-  "main": "src/index.ts",
+  "main": "src/index.js",
   "files": [
     "lib/**/*"
   ],
   "baseUrl": "./src",
   "exports": {
-    "@vimal_madhavan/queue-client": "./lib/index.js"
+    "@vimal_madhavan/queue-client": "./src/index.ts"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
