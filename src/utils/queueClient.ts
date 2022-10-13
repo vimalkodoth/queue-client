@@ -1,10 +1,10 @@
-import { QItem, IHeapify } from '@vimal_madhavan/queue-client';
+import { QItem, IPriorityQueue } from '@vimal_madhavan/queue-client';
 
 const isFinite = (nextInput: any) => Number.isFinite(nextInput);
 export default class QueueClient {
-  pQueue: IHeapify | null = null;
+  pQueue: IPriorityQueue | null = null;
 
-  constructor(pQueue: IHeapify) {
+  constructor(pQueue: IPriorityQueue) {
     this.pQueue = pQueue;
   }
 

@@ -1,7 +1,7 @@
-import { PriorityQueue, QueueClient } from '@vimal_madhavan/queue-client';
+import { IPriorityQueue, PriorityQueue, QueueClient } from '@vimal_madhavan/queue-client';
 
 describe('As a developer, I want findTopN method ', () => {
-  let priorityQueue: PriorityQueue | null;
+  let priorityQueue: IPriorityQueue | null;
   let queueClient: QueueClient | null;
 
   beforeAll(() => {

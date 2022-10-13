@@ -1,7 +1,7 @@
 export type QItem = number;
 export type Queue = Array<QItem>;
 
-export interface IHeapify {
+export interface IPriorityQueue {
   enqueue(node: number): void;
   dequeue(): QItem;
   peek(): number;
@@ -9,7 +9,7 @@ export interface IHeapify {
   printQueue(): Queue;
 }
 
-export class PriorityQueue implements IHeapify {
+export class PriorityQueue implements IPriorityQueue {
   queue: Queue = [];
 
   enqueue(node: number): void {
