@@ -27,7 +27,12 @@ Run following commands in the root directory of the project:
 
 import { PriorityQueue, QueueClient } from '@vimal_madhavan/queue-client';
 const queueClient = new QueueClient(new PriorityQueue());
-const topN = queueClient?.findTopN([1, 2, 5, 3, 4], 2);
+try {
+  const topN = queueClient?.findTopN([1, 2, 5, 3, 4], 2);
+} catch(e) {
+  const errorMessage = (e as Error).message;
+  //handle errorMessage here
+}
 
 ```
 
